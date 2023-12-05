@@ -125,24 +125,24 @@ NSString *YYUIViewContentModeToCAGravity(UIViewContentMode contentMode);
 CGRect YYCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode);
 
 /// Returns the center for the rectangle.
-static inline CGPoint CGRectGetCenter(CGRect rect) {
+static inline CGPoint YYCGRectGetCenter(CGRect rect) {
     return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
 /// Returns the area of the rectangle.
-static inline CGFloat CGRectGetArea(CGRect rect) {
+static inline CGFloat YYCGRectGetArea(CGRect rect) {
     if (CGRectIsNull(rect)) return 0;
     rect = CGRectStandardize(rect);
     return rect.size.width * rect.size.height;
 }
 
 /// Returns the distance between two points.
-static inline CGFloat CGPointGetDistanceToPoint(CGPoint p1, CGPoint p2) {
+static inline CGFloat YYCGPointGetDistanceToPoint(CGPoint p1, CGPoint p2) {
     return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
 /// Returns the minmium distance between a point to a rectangle.
-static inline CGFloat CGPointGetDistanceToRect(CGPoint p, CGRect r) {
+static inline CGFloat YYCGPointGetDistanceToRect(CGPoint p, CGRect r) {
     r = CGRectStandardize(r);
     if (CGRectContainsPoint(r, p)) return 0;
     CGFloat distV, distH;

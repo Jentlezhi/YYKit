@@ -291,8 +291,8 @@
     CGRect startRect = [_startGrabber touchRect];
     CGRect endRect = [_endGrabber touchRect];
     if (CGRectIntersectsRect(startRect, endRect)) {
-        CGFloat distStart = CGPointGetDistanceToPoint(point, CGRectGetCenter(startRect));
-        CGFloat distEnd = CGPointGetDistanceToPoint(point, CGRectGetCenter(endRect));
+        CGFloat distStart = YYCGPointGetDistanceToPoint(point, YYCGRectGetCenter(startRect));
+        CGFloat distEnd = YYCGPointGetDistanceToPoint(point, YYCGRectGetCenter(endRect));
         if (distEnd <= distStart) return NO;
     }
     return CGRectContainsPoint(startRect, point);
@@ -303,8 +303,8 @@
     CGRect startRect = [_startGrabber touchRect];
     CGRect endRect = [_endGrabber touchRect];
     if (CGRectIntersectsRect(startRect, endRect)) {
-        CGFloat distStart = CGPointGetDistanceToPoint(point, CGRectGetCenter(startRect));
-        CGFloat distEnd = CGPointGetDistanceToPoint(point, CGRectGetCenter(endRect));
+        CGFloat distStart = YYCGPointGetDistanceToPoint(point, YYCGRectGetCenter(startRect));
+        CGFloat distEnd = YYCGPointGetDistanceToPoint(point, YYCGRectGetCenter(endRect));
         if (distEnd > distStart) return NO;
     }
     return CGRectContainsPoint(endRect, point);

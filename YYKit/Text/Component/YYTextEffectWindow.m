@@ -397,8 +397,8 @@
         if (!dotInKeyboard) {
             CGRect hostRect = [selection.hostView convertRect:selection.hostView.bounds toView:self];
             CGRect intersection = CGRectIntersection(dotRect, hostRect);
-            if (CGRectGetArea(intersection) < CGRectGetArea(dotRect)) {
-                CGFloat dist = CGPointGetDistanceToRect(CGRectGetCenter(dotRect), hostRect);
+            if (YYCGRectGetArea(intersection) < YYCGRectGetArea(dotRect)) {
+                CGFloat dist = YYCGPointGetDistanceToRect(YYCGRectGetCenter(dotRect), hostRect);
                 if (dist < CGRectGetWidth(dot.frame) * 0.55) {
                     dot.mirror.hidden = NO;
                 }
